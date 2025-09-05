@@ -1,0 +1,6 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+GND,PinHeader_1x07_P2.54mm_Vertical,1,Conn_01x07_Pin,
+IC1,DIP762W60P254L1975H445Q16N,1,TC4511BP,
+J6,PinHeader_1x04_P2.54mm_Vertical,1,Conn_01x04_Pin,
+"R1, R2, R3, R4, R5, R6, R7, R8",R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,8,R,
+"U1, U2, U3, U4",Sx39-1xxxxx,4,SC39-11EWA,
