@@ -39,9 +39,9 @@
 ## 動作
 動作させる場合は、まずArduino UNOにプログラムを書き込んでから本基板をArduinoと接続する。（Arduinoで何らかのプログラムが動作している可能性があり、本基板が破損するのを防ぐため）
 ### プログラムの書き込み
-サンプルプログラムは [program_arduino](program_arduino)フォルダ に保存している。ファイルごとGithubからダウンロードして使用する。
+サンプルプログラムは [program_arduino](program_arduino)フォルダ に保存している。フォルダごとGithubからダウンロードして使用する。
 
-ダウンロードしたプログラムファイルをArduino IDEを使用して開き、手持ちのArduino UNOに書き込む。
+ダウンロードしたプログラムファイルをArduino IDEで開き、手持ちのArduino UNOに書き込む。
 
 書き込む際は「ツール」タブから「ボード:Arduino UNO」を選択し、ポートは適切なCOMポートになっていることを確認する。
 ### 基板の接続
