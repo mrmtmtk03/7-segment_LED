@@ -18,8 +18,10 @@ void display4();
 
 // グローバル変数定義
 int display_num=0000;     // 0から9999までの整数
+int dot_count=0;
 int display_array[4]={0};
 int display_input[4][4]={0};
+int display_dot[4]={0};
 
 void setup() {
   Serial.begin(9600);
@@ -36,8 +38,15 @@ void loop() {
 
 void digitToDisplayData(){
   display_num++;
-  if(display_num<0 && display_num>9999){
+  if(display_num<0){
     display_num=0;
+  }
+  if(display_num==9999){
+    display_num=0;
+    dot_count++;
+    if(dot_count>16){
+      dot_count=0;
+    }
   }
   // display_numを各桁の要素に分解
   display_array[0]=display_num/1000;
@@ -49,6 +58,8 @@ void digitToDisplayData(){
   TruthTable(display_array[1],2);
   TruthTable(display_array[2],3);
   TruthTable(display_array[3],4);
+  // dot処理
+  dotTable(dot_count);
 }
 
 void display4(){
@@ -58,6 +69,7 @@ void display4(){
   digitalWrite(pin_B,display_input[0][1]);
   digitalWrite(pin_C,display_input[0][2]);
   digitalWrite(pin_D,display_input[0][3]);
+  digitalWrite(pin_dot,display_dot[3]);
   delay(DT);
   digitalWrite(U1,HIGH);
   // ユニット2
@@ -66,6 +78,7 @@ void display4(){
   digitalWrite(pin_B,display_input[1][1]);
   digitalWrite(pin_C,display_input[1][2]);
   digitalWrite(pin_D,display_input[1][3]);
+  digitalWrite(pin_dot,display_dot[2]);
   delay(DT);
   digitalWrite(U2,HIGH);
   // ユニット3
@@ -74,6 +87,7 @@ void display4(){
   digitalWrite(pin_B,display_input[2][1]);
   digitalWrite(pin_C,display_input[2][2]);
   digitalWrite(pin_D,display_input[2][3]);
+  digitalWrite(pin_dot,display_dot[1]);
   delay(DT);
   digitalWrite(U3,HIGH);
   // ユニット4
@@ -82,6 +96,7 @@ void display4(){
   digitalWrite(pin_B,display_input[3][1]);
   digitalWrite(pin_C,display_input[3][2]);
   digitalWrite(pin_D,display_input[3][3]);
+  digitalWrite(pin_dot,display_dot[0]);
   delay(DT);
   digitalWrite(U4,HIGH);
 }
@@ -105,11 +120,38 @@ void TruthTable(int num,int unit){
   else{
     display_input[unit-1][2]=1;
   }
-   if(num<8){
+  if(num<8){
     display_input[unit-1][3]=0;
   }
   else{
     display_input[unit-1][3]=1;
+  }
+}
+
+void dotTable(int count){
+  if(count%2==0){
+    display_dot[0]=0;
+  }
+  else{
+    display_dot[0]=1;
+  }
+  if(count%4<2){
+    display_dot[1]=0;
+  }
+  else{
+    display_dot[1]=1;
+  }
+  if(count%8<4){
+    display_dot[2]=0;
+  }
+  else{
+    display_dot[2]=1;
+  }
+  if(count<8){
+    display_dot[3]=0;
+  }
+  else{
+    display_dot[3]=1;
   }
 }
 
