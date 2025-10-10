@@ -10,12 +10,17 @@ KiCadにて回路図を作成した。
 R_1=\frac{V-V_F}{I_F}=\frac{5-3.5}{0.0045}≒330\,[\mathrm{Ω}]
 ```
 具体的な使用部品は以下の表に示す。
-|部品|型番|秋月電子販売コード|
-|:--|:--|:--:|
-|7セグメントドライバー|TC4511BP|[114057](https://akizukidenshi.com/catalog/g/g114057/)|
-|7セグメントLED|OSL10391-LRA|[130319](https://akizukidenshi.com/catalog/g/g130319/)|
-|抵抗器|330 Ω|[107812](https://akizukidenshi.com/catalog/g/g107812/)|
-|丸ピンICソケット(16P)|2227MC-16-03|[100029](https://akizukidenshi.com/catalog/g/g100029/)|
-|細ピンヘッダー(オスL型) 1×12|PHA-1x12RG|[111573](https://akizukidenshi.com/catalog/g/g111573/)|
+| 部品                         | 型番         |                   秋月電子販売コード                   |
+| :--------------------------- | :----------- | :----------------------------------------------------: |
+| 7セグメントドライバー        | TC4511BP     | [114057](https://akizukidenshi.com/catalog/g/g114057/) |
+| 7セグメントLED               | OSL10391-LRA | [130319](https://akizukidenshi.com/catalog/g/g130319/) |
+| 抵抗器                       | 330 Ω        | [107812](https://akizukidenshi.com/catalog/g/g107812/) |
+| 丸ピンICソケット(16P)        | 2227MC-16-03 | [100029](https://akizukidenshi.com/catalog/g/g100029/) |
+| 細ピンヘッダー(オスL型) 1×12 | PHA-1x12RG   | [111573](https://akizukidenshi.com/catalog/g/g111573/) |
 
 なお、点灯させるためには、この他に[Arduino UNO](https://akizukidenshi.com/catalog/g/g115574/)が必要である。
+## プリント基板の作成
+設計した基板データは本リポジトリで公開している。
+例えば、[JLCPCB](https://jlcpcb.com/)であればこの[ZIPファイル](7-segment_LED_02_kicad\production\7-segment_LED_02_kicad.zip) `7-segment_LED_02_kicad\production\7-segment_LED_02_kicad.zip`をgerber fileとしてアップロードすることで基板の発注ができる。
+
+ただし、基板の発注内容に誤りがあった場合、その結果生じた発注者の不利益について、当方は責任を負いかねますので、十分ご注意ください。
